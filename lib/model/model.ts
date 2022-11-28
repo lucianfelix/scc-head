@@ -7,14 +7,19 @@ class Page {
      sections: [Section]
 }
 
-class Metadata {}
+class Metadata {
+    //array of key value pairs
+    [key: string]:string
+}
 
 class Section {
-     blocks: [Block]
+    metadata: Metadata
+    blocks: [Block]
 }
 
 class Block  {
-     blockName: String
+    class: [String]
+    blockName: String
 }
 
 class Hero extends Block {
@@ -24,6 +29,7 @@ class Hero extends Block {
 }
 
 class Header extends Block {
+    id: String
      title: String
      subtitle: String
 }

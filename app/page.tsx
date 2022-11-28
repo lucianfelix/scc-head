@@ -8,7 +8,7 @@ export default async function Page() {
     <div className="space-y-8">
       <h1 className="text-xl font-medium text-gray-300">Examples</h1>
 
-      {data}
+        <div><pre>{JSON.stringify(data, null, 2) }</pre></div>
 
     </div>
   );
