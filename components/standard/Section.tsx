@@ -27,7 +27,7 @@ export default function Section({data} : SectionProps) {
         blockComponents.push(blockComponent);
     }
 
-    return <div className={"section " + metadata?.Style}>
+    return <div className={"section " + (metadata?.Style ? metadata?.Style : "")}>
         {blockComponents}
     </div>;
 }

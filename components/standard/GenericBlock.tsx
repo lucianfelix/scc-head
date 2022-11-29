@@ -18,7 +18,9 @@ export function GenericBlock({data} : GenericBlockProps) {
 
     const Container = `${type.toLowerCase()}`;
     // @ts-ignore
-    return (<>
-        <Container className={clazz} id={id} dangerouslySetInnerHTML={{ __html: content }}/>
-    </>);
+    return (
+        <div className={"default-content-wrapper"}>
+            <Container className={clazz} id={id} dangerouslySetInnerHTML={{ __html: content }}/>
+        </div>
+    );
 }

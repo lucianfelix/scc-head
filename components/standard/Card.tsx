@@ -5,16 +5,21 @@ export type CardProps = {
         type: "card",
         'class': string,
         content: string
+        picture: any
     }
 }
 export function Card({data} : CardProps) {
-    const { content, 'class': clazz } = data;
+    const { content, 'class': clazz, picture } = data;
 
     if (!content) {
         return null;
     }
 
     return (
-        <div className={"card " + clazz} dangerouslySetInnerHTML={{ __html: content }}/>
+        <div className={"cards-card"}>
+        <div
+            className={"cards-card-details"}
+            dangerouslySetInnerHTML={{ __html: content }}/>
+        </div>
     );
 }

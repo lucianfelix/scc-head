@@ -12,8 +12,8 @@ import "./global.css";
 export default async function Page() {
 
     const source = await parse(
-        "https://main--upm--hlxsites.hlx.live",
-        //null,
+        //"https://main--upm--hlxsites.hlx.live",
+        null,
         [
             {
                 blockType: "slideshow",
@@ -31,14 +31,14 @@ export default async function Page() {
     );
 
     return (
-        <div className="space-y-8">
+        <div className="page">
             <RnaPage data={source}/>
 
-            <h1 className="text-xl font-medium text-gray-300">Model</h1>
+            {/*<h1 className="text-xl font-medium text-gray-300">Model</h1>*/}
 
-            <div>
-                <pre>{JSON.stringify(source, null, 2)}</pre>
-            </div>
+            {/*<div>*/}
+            {/*    <pre>{JSON.stringify(source, null, 2)}</pre>*/}
+            {/*</div>*/}
 
             {/*<Slideshow />*/}
             {/*<ArticleList />*/}
