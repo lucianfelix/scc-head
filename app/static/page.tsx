@@ -3,7 +3,6 @@ import Link from 'next/link';
 
 import Slideshow from '../components/slideshow';
 import ArticleList from '../components/article-list';
-import {Page as RnaPage} from '../components/standard/Page';
 
 import {parseSlideshow, parseArticles, parseLinkList} from '../lib/upm.js';
 import PageContainer from "../components/standard/PageContainer";
@@ -29,7 +28,8 @@ export default async function Page() {
     );
     return (
         <div className="space-y-8">
-            <RnaPage data={source}/>
+            <PageContainer source={source}/>
+
 
             <h1 className="text-xl font-medium text-gray-300">Model</h1>
 
@@ -37,8 +37,8 @@ export default async function Page() {
                 <pre>{JSON.stringify(source, null, 2)}</pre>
             </div>
 
-            {/*<Slideshow />*/}
-            {/*<ArticleList />*/}
+            <Slideshow />
+            <ArticleList />
 
         </div>
     );

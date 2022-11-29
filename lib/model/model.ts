@@ -4,7 +4,13 @@ export {}
 class Page {
      metadata: Metadata
      title: String
-     sections: [Section]
+     sections: [Section] | []
+
+    constructor() {
+        this.metadata = new Metadata();
+        this.title = '';
+        this.sections = [];
+    }
 }
 
 class Metadata {
@@ -14,7 +20,12 @@ class Metadata {
 
 class Section {
     metadata: Metadata
-    blocks: [Block]
+    blocks: [Block] | []
+
+    constructor() {
+        this.metadata = new Metadata();
+        this.blocks = [];
+    }
 }
 
 class Block  {

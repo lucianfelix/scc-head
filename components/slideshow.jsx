@@ -1,6 +1,6 @@
-import data from './slideshow-data'
+//import data from './slideshow-data'
 
-export default function Slideshow() {
+export default function Slideshow({data}) {
 
   return (<>
   {/* <div className="section slideshow-container" data-section-status="loaded">

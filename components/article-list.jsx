@@ -21,8 +21,9 @@ async function fetchArticles(indexFile, pageSize = 500, offset = 0) {
   return results
 }
 
-export default async function ArticleList() {
-  const articlesList = await fetchArticles('query-index')
+export default async function ArticleList({data}) {
+  //const articlesList = await fetchArticles('query-index')
+  const articlesList = data;
 
   return (<>
     {articlesList.map(
