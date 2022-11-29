@@ -7,7 +7,6 @@ export default async function Page() {
 
     const data = await load(
         "https://main--upm--hlxsites.hlx.live",
-
         [
             {
                 blockType: "slideshow",
