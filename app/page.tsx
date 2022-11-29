@@ -1,6 +1,9 @@
 import {load} from '../lib/data';
 import Link from 'next/link';
 
+import Slideshow from '../components/slideshow';
+import ArticleList from '../components/article-list';
+
 import {parseSlideshow, parseArticles, parseLinkList} from '../lib/upm.js';
 
 export default async function Page() {
@@ -29,6 +32,9 @@ export default async function Page() {
             <div>
                 <pre>{JSON.stringify(data, null, 2)}</pre>
             </div>
+
+            <Slideshow />
+            <ArticleList />
 
         </div>
     );

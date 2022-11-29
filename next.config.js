@@ -6,6 +6,17 @@ const nextConfig = {
     // Required:
     appDir: true,
   },
+  images: {
+    minimumCacheTTL: 12000,
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'main--upm--hlxsites.hlx.live',
+        // port: '',
+        pathname: '/**',
+      },
+    ],
+  },
 }
 
 module.exports = nextConfig
