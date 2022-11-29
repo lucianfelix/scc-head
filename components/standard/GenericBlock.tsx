@@ -12,6 +12,10 @@ export type GenericBlockProps = {
 export function GenericBlock({data} : GenericBlockProps) {
     const { type, id, content, 'class': clazz } = data;
 
+    if (!content) {
+        return null;
+    }
+
     const Container = `${type.toLowerCase()}`;
     // @ts-ignore
     return (<>

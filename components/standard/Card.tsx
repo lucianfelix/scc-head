@@ -10,6 +10,10 @@ export type CardProps = {
 export function Card({data} : CardProps) {
     const { content, 'class': clazz } = data;
 
+    if (!content) {
+        return null;
+    }
+
     return (
         <div className={"card " + clazz} dangerouslySetInnerHTML={{ __html: content }}/>
     );
