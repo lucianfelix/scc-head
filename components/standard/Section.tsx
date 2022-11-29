@@ -4,9 +4,19 @@ import {ColumnContainer} from './ColumnContainer';
 import {CardContainer} from './CardContainer';
 import ArticleList from "../article-list";
 import Slideshow from "../slideshow";
-import {GenericBlock} from "./GenericBlock";
+import {GenericBlock, GenericBlockProps} from "./GenericBlock";
 
-export default function Section({data}) {
+type SectionProps = {
+    data: {
+        type: "card",
+        metadata: {
+            Style: string,
+        },
+        blocks: [any]
+    }
+}
+
+export default function Section({data} : SectionProps) {
     const { type, metadata, blocks } = data;
 
     let blockComponents = [];
@@ -22,7 +32,7 @@ export default function Section({data}) {
     </div>;
 }
 
-function createBlockComponent(block) {
+function createBlockComponent(block: any) {
     const { type, 'class': clazz} = block;
 
     //block type can be column-container, card-container or custom

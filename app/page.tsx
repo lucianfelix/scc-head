@@ -7,6 +7,7 @@ import {Page as RnaPage} from '../components/standard/Page';
 
 import {parseSlideshow, parseArticles, parseLinkList} from '../lib/upm.js';
 import PageContainer from "../components/standard/PageContainer";
+import "./global.css";
 
 export default async function Page() {
 
@@ -28,6 +29,7 @@ export default async function Page() {
             },
         ]
     );
+
     return (
         <div className="space-y-8">
             <RnaPage data={source}/>

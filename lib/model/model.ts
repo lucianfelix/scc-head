@@ -1,71 +1,64 @@
 export {}
 
 
-class Page {
+type Page = {
      metadata: Metadata
      title: String
      sections: [Section] | []
-
-    constructor() {
-        this.metadata = new Metadata();
-        this.title = '';
-        this.sections = [];
-    }
 }
 
-class Metadata {
+type Metadata = {
     //array of key value pairs
     [key: string]:string
 }
 
-class Section {
+type Section = {
     metadata: Metadata
     blocks: [Block] | []
-
-    constructor() {
-        this.metadata = new Metadata();
-        this.blocks = [];
-    }
 }
 
-class Block  {
+type Block = {
     class: [String]
     blockName: String
 }
 
-class Hero extends Block {
-     title: String
-     subtitle: String
-     image: Image
-}
+// type Hero extends Block {
+//      title: String
+//      subtitle: String
+//      image: Image
+// }
+//
+// type Header extends Block {
+//     id: String
+//      title: String
+//      subtitle: String
+// }
 
-class Header extends Block {
-    id: String
-     title: String
-     subtitle: String
-}
-
-class ColumnsContainer extends Block {
+type ColumnsContainer = Block & {
      columns: [Column]
 }
 
-class CardsContainer extends Block {
-    cards: [Column]
+type CardsContainer = Block & {
+    cards: [Card]
 }
 
-class Card {
+type Card = {
      picture: Picture
      block: Block
 }
 
-class Picture {
-    source: AssetSource
+type Column = {
+    picture: Picture
+    block: Block
+}
+
+type Picture = {
+    //source: AssetSource
     
-    enum AssetSource: , Hashable {
-        case url(url: URL)
-        case bundledAsset(name: String)
-    }
-    
+    // enum AssetSource: , Hashable {
+    //     case url(url: URL)
+    //     case bundledAsset(name: String)
+    // }
 }
 
 
