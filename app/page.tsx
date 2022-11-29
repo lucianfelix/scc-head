@@ -1,12 +1,8 @@
 import {parse} from '../lib/data';
-import Link from 'next/link';
 
-import Slideshow from '../components/slideshow';
-import ArticleList from '../components/article-list';
 import {Page as RnaPage} from '../components/standard/Page';
 
 import {parseSlideshow, parseArticles, parseLinkList} from '../lib/upm.js';
-import PageContainer from "../components/standard/PageContainer";
 import "./global.css";
 
 export default async function Page() {

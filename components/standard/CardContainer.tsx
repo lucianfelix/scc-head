@@ -19,10 +19,12 @@ export function CardContainer({data}: CardContainerProps) {
         countClass += " " + clazz;
     }
 
+    // @ts-ignore
     if(cards.length === 2) {
         countClass += " two";
     }
 
+    // @ts-ignore
     if(cards.length === 3) {
         countClass += " three";
     }
@@ -32,6 +34,7 @@ export function CardContainer({data}: CardContainerProps) {
             <div className={countClass}>
                 <div>
                 {cards.map((card, index) => {
+                    // @ts-ignore
                     return <Card data={card} position={index}/>
                 })}
                 </div>

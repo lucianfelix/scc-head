@@ -46,6 +46,7 @@ function createBlockComponent(block: any) {
     }
 
     if (type === "article-list") {
+        // @ts-ignore
         return <ArticleList data={block}/>
     }
 

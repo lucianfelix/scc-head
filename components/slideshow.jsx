@@ -1,3 +1,5 @@
+'use server';
+
 //import data from './slideshow-data'
 
 export default function Slideshow({data}) {

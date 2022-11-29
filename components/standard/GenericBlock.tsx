@@ -16,7 +16,7 @@ export function GenericBlock({data} : GenericBlockProps) {
         return null;
     }
 
-    const Container = `${type.toLowerCase()}`;
+    const Container:any = `${type.toLowerCase()}`;
     // @ts-ignore
     return (
         <div className={"default-content-wrapper"}>
