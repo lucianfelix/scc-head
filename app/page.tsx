@@ -9,7 +9,7 @@ export default async function Page() {
 
     const source = await parse(
         //"https://main--upm--hlxsites.hlx.live",
-        "https://www.hlx.live",
+        "https://www.hlx.live/home",
         // null,
         [
             {
