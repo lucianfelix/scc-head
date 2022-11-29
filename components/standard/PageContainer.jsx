@@ -2,7 +2,7 @@
 
 import Page from "./Page";
 
-export default function PageContainer({source}) {
+export default async function PageContainer({source}) {
     //
     // const Component = lookupComponent("page");
     // if (!Component) {

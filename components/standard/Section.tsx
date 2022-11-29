@@ -13,17 +13,18 @@ type SectionProps = {
             Style: string,
         },
         blocks: [any]
-    }
+    },
+    indexData: [any]
 }
 
-export default function Section({data} : SectionProps) {
+export default function Section({data, indexData} : SectionProps) {
     const { type, metadata, blocks } = data;
 
     let blockComponents = [];
 
     for (let i = 0; i < blocks.length; i++) {
         const block = blocks[i];
-        const blockComponent = createBlockComponent(block);
+        const blockComponent = createBlockComponent(block, indexData);
         blockComponents.push(blockComponent);
     }
 
@@ -32,7 +33,7 @@ export default function Section({data} : SectionProps) {
     </div>;
 }
 
-function createBlockComponent(block: any) {
+function createBlockComponent(block: any, indexData: any) {
     const { type, 'class': clazz} = block;
 
     //block type can be column-container, card-container or custom
@@ -45,9 +46,9 @@ function createBlockComponent(block: any) {
         return <CardContainer data={block}/>
     }
 
-    if (type === "article-list") {
+    if (type === "articles") {
         // @ts-ignore
-        return <ArticleList data={block}/>
+        return <ArticleList data={block} indexData={indexData}/>
     }
 
     if (type === "slideshow") {

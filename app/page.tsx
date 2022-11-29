@@ -7,8 +7,12 @@ import "./global.css";
 
 export default async function Page() {
 
+    const indexResp = await fetch(`https://main--upm--hlxsites.hlx.live/query-index.json?limit=500&offset=0`);
+    const indexJson = await indexResp.json();
+    const indexData = indexJson.data;
+
     const source = await parse(
-        //"https://main--upm--hlxsites.hlx.live",
+        // "https://main--upm--hlxsites.hlx.live",
         "https://www.hlx.live/home",
         // null,
         [
@@ -29,7 +33,7 @@ export default async function Page() {
 
     return (
         <div className="page">
-            <RnaPage data={source}/>
+            <RnaPage data={source} indexData={indexData}/>
 
             {/*<h1 className="text-xl font-medium text-gray-300">Model</h1>*/}
 
