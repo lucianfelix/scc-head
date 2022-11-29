@@ -17,9 +17,10 @@ export function Card({data} : CardProps) {
 
     return (
         <div className={"cards-card"}>
-        <div
-            className={"cards-card-details"}
-            dangerouslySetInnerHTML={{ __html: content }}/>
+            {picture && <picture dangerouslySetInnerHTML={{ __html: picture }}/>}
+            <div
+                className={"cards-card-details"}
+                dangerouslySetInnerHTML={{ __html: content }}/>
         </div>
     );
 }

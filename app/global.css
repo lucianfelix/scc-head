@@ -685,7 +685,7 @@ body .section.separator
     transform: translate(-50px, 0);
 }
 
-.columns.bleed div.columns-image img.enter {
+.columns.bleed div.columns-image img {
     opacity: 1;
     transform: translate(0, 0);
 }
@@ -864,12 +864,12 @@ body .section.separator
     transition: opacity 0.3s ease-in-out;
 }
 
-.cards .cards-card.enter {
+.cards .cards-card {
     opacity: 1;
     transform: translate(0, 0);
 }
 
-.cards .cards-card.enter:hover {
+.cards .cards-card:hover {
     transform: scale(calc(100% + 1rem), calc(100% + 1rem)) translate(0, 0);
 }
 

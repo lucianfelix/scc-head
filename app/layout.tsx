@@ -7,7 +7,7 @@ export default function RootLayout({
     <html lang="en" style={{ scrollBehavior: 'auto' }}>
       <head />
       <body style={{ scrollBehavior: 'auto' }}>
-        <div>{children}</div>
+        <main>{children}</main>
       </body>
     </html>
   );
