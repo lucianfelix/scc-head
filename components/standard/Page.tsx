@@ -3,8 +3,7 @@
 import Section from "./Section";
 
 export function Page({data}) {
-
-    return <div className={"section"}>
+    return <div className={"page"}>
         {data.sections.map((section, index) => {
             return <Section data={section}/>
         })}

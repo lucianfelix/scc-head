@@ -4,10 +4,10 @@ import {ColumnContainer} from './ColumnContainer';
 import {CardContainer} from './CardContainer';
 import ArticleList from "../article-list";
 import Slideshow from "../slideshow";
+import {GenericBlock} from "./GenericBlock";
 
 export default function Section({data}) {
-
-    const blocks = data.blocks;
+    const { type, metadata, blocks } = data;
 
     let blockComponents = [];
 
@@ -17,15 +17,13 @@ export default function Section({data}) {
         blockComponents.push(blockComponent);
     }
 
-    return <div className={"section"}>
+    return <div className={"section " + metadata?.Style}>
         {blockComponents}
     </div>;
 }
 
 function createBlockComponent(block) {
-    const type = block.type;
-    // const props = block.props;
-    // const key = block.key;
+    const { type, 'class': clazz} = block;
 
     //block type can be column-container, card-container or custom
 
@@ -44,4 +42,6 @@ function createBlockComponent(block) {
     if (type === "slideshow") {
         return <Slideshow data={block}/>
     }
+
+    return <GenericBlock data={block}/>
 }
