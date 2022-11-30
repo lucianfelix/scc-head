@@ -14,11 +14,11 @@ export default function ArticleList({data, indexData}) {
             const thisTags = `[\"${content}\"]`
             if(thisTags === tags) {
               return(<div key={`${content}_${path}`}>
-                <Link href={`https://main--upm--hlxsites.hlx.live${path}`}>
+                <Link href={`upm${path}`}>
                   <Image src={`https://main--upm--hlxsites.hlx.live${image}`} width={200} height={100} />
                 </Link>
                 <h2>{title}</h2>
-                <div className="article-link"><Link href={`https://main--upm--hlxsites.hlx.live${path}`}>Read More</Link></div>
+                <div className="article-link"><Link href={`upm${path}`}>Read More</Link></div>
               </div>)
             }
           })}
