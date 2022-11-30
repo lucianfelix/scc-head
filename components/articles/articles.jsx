@@ -2,13 +2,15 @@
 
 import Link from 'next/link';
 import Image from 'next/image';
+import './articles.css'
 
-export default function ArticleList({data, indexData}) {
+export default function Articles({data, indexData}) {
 
-  return (<>
+  return (<div className='articles-wrapper'>
+    <div className='articles'>
     {data.articles.map(
       ({ header, content, style }, i) => {
-        return (<div key={`section_${content}`} className={style}>
+        return (<div key={`section_${content}`} className={`article-column ${style}`}>
           <div dangerouslySetInnerHTML={{__html: header}} />
           {indexData.map(({path, title, tags, description, image}) => {
             const thisTags = `[\"${content}\"]`
@@ -17,8 +19,8 @@ export default function ArticleList({data, indexData}) {
                 <Link href={`upm${path}`}>
                   <Image src={`https://main--upm--hlxsites.hlx.live${image}`} width={200} height={100} />
                 </Link>
-                <h2>{title}</h2>
-                <div className="article-link"><Link href={`upm${path}`}>Read More</Link></div>
+                {content != 'banner' && <h2>{title}</h2>}
+                {content != 'banner' && <div className="article-link"><Link href={`upm${path}`}>Read More</Link></div>}
               </div>)
             }
           })}
@@ -26,5 +28,6 @@ export default function ArticleList({data, indexData}) {
         );
       }
     )}
-  </>)
+  </div>
+  </div>)
 }

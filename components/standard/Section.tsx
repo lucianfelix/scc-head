@@ -2,7 +2,7 @@
 
 import {ColumnContainer} from './ColumnContainer';
 import {CardContainer} from './CardContainer';
-import ArticleList from "../article-list";
+import Articles from "../articles/articles";
 import Slideshow from "../slideshow";
 import {GenericBlock, GenericBlockProps} from "./GenericBlock";
 
@@ -48,7 +48,7 @@ function createBlockComponent(block: any, indexData: any) {
 
     if (type === "articles") {
         // @ts-ignore
-        return <ArticleList data={block} indexData={indexData}/>
+        return <Articles data={block} indexData={indexData}/>
     }
 
     if (type === "slideshow") {

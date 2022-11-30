@@ -2,7 +2,7 @@
 
 import {parse} from '../../../lib/data';
 import {Page as RnaPage} from '../../../components/standard/Page';
-// import "./global.css";
+import "../styles.css";
 
 export default async function Page({params}) {
     const hlxPath = params.path.join('/');
