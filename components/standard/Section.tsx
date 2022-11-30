@@ -46,6 +46,7 @@ function createBlockComponent(block: any, indexData: any) {
         return <CardContainer data={block}/>
     }
 
+    //todo: lookups for custom components
     if (type === "articles") {
         // @ts-ignore
         return <Articles data={block} indexData={indexData}/>

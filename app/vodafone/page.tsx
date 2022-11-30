@@ -7,7 +7,7 @@ import "./global.css";
 export default async function Page() {
 
     const source = await parse(
-        "https://www.hlx.live/home",
+        "https://main--vodafone--hlxsites.hlx.live",
         []
     );
 

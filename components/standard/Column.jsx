@@ -22,9 +22,11 @@ export function Column(props) {
     }
 
     return (
-        <div className={columnClass}><div
+        <div className={columnClass}>
+            <div
                 className={"columns-content-wrapper"}
                 dangerouslySetInnerHTML={{ __html: content }}
-            /></div>
+            />
+        </div>
     );
 }

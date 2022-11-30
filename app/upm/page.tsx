@@ -16,7 +16,7 @@ export default async function Page() {
 
     const indexResp = await fetch(
         `https://main--upm--hlxsites.hlx.live/query-index.json?limit=500&offset=0`,
-        { next: { revalidate: 36000 } });
+        {next: {revalidate: 36000}});
 
     const indexJson = await indexResp.json();
     const indexData = indexJson.data;
@@ -40,18 +40,18 @@ export default async function Page() {
     );
 
     return (
-        <div className="page">
-            <RnaPage data={source} indexData={indexData}/>
-
-            {/*<h1 className="text-xl font-medium text-gray-300">Model</h1>*/}
-
-            {/*<div>*/}
-            {/*    <pre>{JSON.stringify(source, null, 2)}</pre>*/}
-            {/*</div>*/}
-
-            {/*<Slideshow />*/}
-            {/*<ArticleList />*/}
-
-        </div>
+        <>
+            <header className={"header-wrapper"}>
+                <div className="header block">
+                <nav aria-expanded="false" dangerouslySetInnerHTML={{ __html: source?.nav?.content }}>
+                    {/*<div className="nav-hamburger"><div className="nav-hamburger-icon"></div></div>*/}
+                </nav>
+                </div>
+            </header>
+            <main>
+                <RnaPage data={source} indexData={indexData}/>
+            </main>
+            <footer className={"footer-wrapper"}></footer>
+        </>
     );
 }
