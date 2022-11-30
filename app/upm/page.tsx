@@ -1,9 +1,15 @@
-import {parse} from '../lib/data';
+import {parse} from '../../lib/data';
 
-import {Page as RnaPage} from '../components/standard/Page';
+import {Page as RnaPage} from '../../components/standard/Page';
 
-import {parseSlideshow, parseArticles, parseLinkList} from '../lib/upm.js';
-import "./global.css";
+import {parseSlideshow, parseArticles, parseLinkList} from '../../lib/upm.js';
+import "./slideshow.css";
+import "./header.css";
+import "./hero.css";
+import "./link-list.css";
+import "./cards.css";
+import "./columns.css";
+import "./footer.css";
 
 export default async function Page() {
 
@@ -13,8 +19,6 @@ export default async function Page() {
 
     const source = await parse(
         "https://main--upm--hlxsites.hlx.live",
-        //"https://www.hlx.live/home",
-        // null,
         [
             {
                 blockType: "slideshow",
