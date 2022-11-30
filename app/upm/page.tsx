@@ -4,7 +4,6 @@ import {Page as RnaPage} from '../../components/standard/Page';
 
 import {parseSlideshow, parseArticles, parseLinkList} from '../../lib/upm.js';
 import "./styles.css";
-import "./slideshow.css";
 import "./header.css";
 import "./hero.css";
 import "./link-list.css";

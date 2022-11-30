@@ -3,7 +3,7 @@
 import {ColumnContainer} from './ColumnContainer';
 import {CardContainer} from './CardContainer';
 import Articles from "../articles/articles";
-import Slideshow from "../slideshow";
+import Slideshow from "../slideshow/slideshow";
 import {GenericBlock, GenericBlockProps} from "./GenericBlock";
 
 type SectionProps = {
