@@ -3,6 +3,7 @@ import {parse} from '../../lib/data';
 import {Page as RnaPage} from '../../components/standard/Page';
 
 import {parseSlideshow, parseArticles, parseLinkList} from '../../lib/upm.js';
+import "./styles.css";
 import "./slideshow.css";
 import "./header.css";
 import "./hero.css";
@@ -13,7 +14,10 @@ import "./footer.css";
 
 export default async function Page() {
 
-    const indexResp = await fetch(`https://main--upm--hlxsites.hlx.live/query-index.json?limit=500&offset=0`);
+    const indexResp = await fetch(
+        `https://main--upm--hlxsites.hlx.live/query-index.json?limit=500&offset=0`,
+        { next: { revalidate: 36000 } });
+
     const indexJson = await indexResp.json();
     const indexData = indexJson.data;
 

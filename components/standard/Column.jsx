@@ -8,7 +8,7 @@ export function Column(props) {
         return null;
     }
 
-    let columnClass = "column   columns-content";
+    let columnClass = "column columns-content";
     if(clazz) {
         columnClass+= " " + clazz;
     }
@@ -22,10 +22,9 @@ export function Column(props) {
     }
 
     return (
-        <div className={"column " + columnClass}>
-            <div
+        <div className={columnClass}><div
                 className={"columns-content-wrapper"}
-                dangerouslySetInnerHTML={{ __html: content }}/>
-        </div>
+                dangerouslySetInnerHTML={{ __html: content }}
+            /></div>
     );
 }
