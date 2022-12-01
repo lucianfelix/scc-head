@@ -17,15 +17,23 @@ export default function Articles({data, indexData}) {
             //if image string contains "image" then is eager
             const eagerImage = path.includes('up-pgh-covid-19-bayanihan-na-operations-center');
             if(thisTags === tags) {
+              let sizes = '100vw';
+              switch (style) {
+                case 'banner-style': sizes = '(max-width: 700px) 80vw, 250px'; break;
+                case 'article-style': sizes = '100px'; break;
+                case 'article-style article-gray': sizes = '100px'; break;
+              }
+
               return(<div key={`${content}_${path}`}>
                 <Link href={`upm${path}`}>
                   <Image src={`https://main--upm--hlxsites.hlx.live${image}`}
+                         alt={title ? title : 'missing title'}
                          width={200}
                          height={100}
-                         //sizes={'(max-width: 600px) 80vw, 200px'}
+                         sizes={sizes}
                          loading={ eagerImage ? 'eager' : 'lazy'}
                          priority={eagerImage}
-                         quality={30}
+                         quality={10}
                   />
                 </Link>
                 {content != 'banner' && <h2>{title}</h2>}
