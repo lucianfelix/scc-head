@@ -20,8 +20,9 @@ export default function Articles({data, indexData}) {
                   <Image src={`https://main--upm--hlxsites.hlx.live${image}`}
                          width={200}
                          height={100}
-                         sizes={'10vw'}
-                         loading={ i < 2 ? 'eager' : 'lazy'}
+                         // sizes={'10vw'}
+                         loading={ i == 0 ? 'eager' : 'lazy'}
+                         priority={i == 0}
                   />
                 </Link>
                 {content != 'banner' && <h2>{title}</h2>}

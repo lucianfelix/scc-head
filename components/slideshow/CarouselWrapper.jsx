@@ -7,7 +7,7 @@ export default function CarouselWrapper({ children }) {
     <Carousel
         autoPlay
         showArrows
-        interval={5000}
+        interval={10000}
         showThumbs={false}>
         {children}
       </Carousel>
