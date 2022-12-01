@@ -115,6 +115,10 @@ main .slideshow-container {
   justify-content: center;
 }
 
+.slide a {
+  display:block;
+}
+
 /* desktop styles */
 @media (min-width: 900px) {
   main .slideshow-container {
