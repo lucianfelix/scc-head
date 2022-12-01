@@ -8,7 +8,11 @@ import './slideshow.css'
 export default function Slideshow({data}) {
 
   return (<>
-    <Carousel autoPlay showArrows showThumbs={false}>
+    <Carousel
+        autoPlay
+        showArrows
+        interval={5000}
+        showThumbs={false}>
       {data.slides.map(
         ({ type, picture, link }, i) => {
           const pictureHtml = picture.replaceAll('./media', 'https://main--upm--hlxsites.hlx.live/media')
