@@ -6,6 +6,11 @@ import "../styles.css";
 
 export async function generateStaticParams() {
     return [
+        {path: ['articles','disaster-risk-reduction-and-management-in-health-center']},
+        {path: ['articles','stop-covid-deaths-webinar-series-bags-2022-silver-quill-award-of-excellence']},
+        {path: ['articles','ups-stop-covid-deaths-second-anniversary']},
+        {path: ['articles','ending-abuse-towards-children']},
+        {path: ['articles','first-sexual-health-clinic-in-the-philippines-launched']},
         {path: ['articles','up-pgh-covid-19-bayanihan-na-operations-center']},
         {path: ['articles','up-manila-covid-19-updates']},
         {path: ['articles','up-manila-health-advisories']},
