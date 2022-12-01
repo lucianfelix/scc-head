@@ -13,21 +13,21 @@ type ArticleEntry = {
   image: string;
 }
 
-export async function generateStaticParams() {
-    const indexResp = await fetch(
-        `https://main--upm--hlxsites.hlx.live/query-index.json?limit=500&offset=0`,
-        {next: {revalidate: 36000}});
-
-    const indexJson = await indexResp.json();
-    const paths = indexJson.data.map((entry: ArticleEntry) => {
-        const pathItem = entry.path.split('/').slice(1);
-        if(pathItem.length > 1 && pathItem[0] === 'articles') {
-          return {path: pathItem};
-        }
-    });
-    const filteredPaths = paths.filter((path: any) => path != null);
-    return filteredPaths;
-}
+// export async function generateStaticParams() {
+//     const indexResp = await fetch(
+//         `https://main--upm--hlxsites.hlx.live/query-index.json?limit=500&offset=0`,
+//         {next: {revalidate: 36000}});
+//
+//     const indexJson = await indexResp.json();
+//     const paths = indexJson.data.map((entry: ArticleEntry) => {
+//         const pathItem = entry.path.split('/').slice(1);
+//         if(pathItem.length > 1 && pathItem[0] === 'articles') {
+//           return {path: pathItem};
+//         }
+//     });
+//     const filteredPaths = paths.filter((path: any) => path != null);
+//     return filteredPaths;
+// }
 
 type Params = {
     path: string[];
