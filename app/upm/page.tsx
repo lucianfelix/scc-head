@@ -3,20 +3,20 @@ import {parse} from '../../lib/parsers/hlx/boilerplate';
 import {Page as RnaPage} from '../../components/standard/Page';
 
 import {parseSlideshow, parseArticles, parseLinkList} from '../../lib/parsers/hlx/upm.js';
-import "./styles.css";
-// import "./header.css";
-// import "./hero.css";
-// import "./link-list.css";
-// import "./cards.css";
-// import "./columns.css";
-// import "./footer.css";
-import "./comps.css";
+//import "./styles.css";
+import "./header.css";
+import "./hero.css";
+import "./link-list.css";
+import "./cards.css";
+import "./columns.css";
+//import "./footer.css";
+//import "./comps.css";
 
 export default async function Page() {
 
     const indexResp = await fetch(
         `https://main--upm--hlxsites.hlx.live/query-index.json?limit=500&offset=0`,
-        {next: {revalidate: 36000}});
+        {next: {revalidate: 360000}});
 
     const indexJson = await indexResp.json();
     const indexData = indexJson.data;
