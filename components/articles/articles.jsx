@@ -17,7 +17,12 @@ export default function Articles({data, indexData}) {
             if(thisTags === tags) {
               return(<div key={`${content}_${path}`}>
                 <Link href={`upm${path}`}>
-                  <Image src={`https://main--upm--hlxsites.hlx.live${image}`} width={200} height={100} />
+                  <Image src={`https://main--upm--hlxsites.hlx.live${image}`}
+                         width={200}
+                         height={100}
+                         sizes={'10vw'}
+                         loading={ i < 2 ? 'eager' : 'lazy'}
+                  />
                 </Link>
                 {content != 'banner' && <h2>{title}</h2>}
                 {content != 'banner' && <div className="article-link"><Link href={`upm${path}`}>Read More</Link></div>}
