@@ -20,9 +20,13 @@ export async function generateStaticParams() {
 
     const indexJson = await indexResp.json();
     const paths = indexJson.data.map((entry: ArticleEntry) => {
-        return {path: entry.path.split('/').slice(1)};
+        const pathItem = entry.path.split('/').slice(1);
+        if(pathItem.length > 1 && pathItem[0] === 'articles') {
+          return {path: pathItem};
+        }
     });
-    return paths;
+    const filteredPaths = paths.filter((path: any) => path != null);
+    return filteredPaths;
 }
 
 type Params = {
