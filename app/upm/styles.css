@@ -264,3 +264,8 @@ main .section.highlight {
 [data-nextjs-scroll-focus-boundary] {
   display: contents;
 }
+
+
+div.page .section {
+  padding: 0;
+}

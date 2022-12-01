@@ -1,15 +1,16 @@
-import {parse} from '../../lib/data';
+import {parse} from '../../lib/parsers/hlx/boilerplate';
 
 import {Page as RnaPage} from '../../components/standard/Page';
 
-import {parseSlideshow, parseArticles, parseLinkList} from '../../lib/upm.js';
+import {parseSlideshow, parseArticles, parseLinkList} from '../../lib/parsers/hlx/upm.js';
 import "./styles.css";
-import "./header.css";
-import "./hero.css";
-import "./link-list.css";
-import "./cards.css";
-import "./columns.css";
-import "./footer.css";
+// import "./header.css";
+// import "./hero.css";
+// import "./link-list.css";
+// import "./cards.css";
+// import "./columns.css";
+// import "./footer.css";
+import "./comps.css";
 
 export default async function Page() {
 

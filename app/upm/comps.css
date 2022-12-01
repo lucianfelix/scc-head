@@ -1,0 +1,679 @@
+/* header and nav layout */
+header nav {
+    display: grid;
+    grid-template:
+    'brand brand brand' 7fr
+    'sections sections tools' 3fr / 50px 1fr;
+    height: var(--nav-height);
+    align-items: center;
+    position: relative;
+    z-index: 1;
+    background-color: var(--background-color);
+    width: 100vw;
+    box-sizing: border-box;
+    font-family: var(--body-font-family);
+}
+
+header nav a:any-link {
+    color: var(--brand-red);
+    padding: 3px;
+}
+
+/* brand */
+header .nav-brand {
+    background-color: var(--brand-red);
+    grid-area: brand;
+    font-size: 22px;
+    font-weight: 700;
+    line-height: 1em;
+}
+
+header nav .nav-brand p {
+    margin: 0;
+}
+
+header nav .nav-brand img {
+    height: 100%;
+    width: auto;
+}
+
+/* hamburger */
+header nav .nav-hamburger {
+    grid-area: hamburger;
+    cursor: pointer;
+    display: none;
+}
+
+/* sections */
+header nav .nav-sections {
+    grid-area: sections;
+    flex-direction: column;
+    flex: 1 1 auto;
+    padding: 5px;
+}
+
+header nav .nav-sections ul {
+    display: flex;
+    flex-flow: row wrap;
+    background-color: unset;
+    width: unset;
+    margin: 0;
+    font-size: 16px;
+    font-weight: 500;
+    list-style: none;
+    padding-left: 0;
+}
+
+header nav .nav-sections li {
+    font-size: 20px;
+    font-weight: 500;
+    color: var(--brand-red)
+}
+
+header nav .nav-sections > ul > li {
+    padding: 0 12px;
+    position: relative;
+    font-size: 16px;
+    margin: 0;
+    cursor: pointer;
+    padding-top: 0;
+}
+
+/* tools */
+header nav .nav-tools {
+    grid-area: tools;
+    flex: 0 0 auto;
+}
+
+header nav .nav-tools p {
+    margin: 0;
+}
+
+header nav .nav-tools form {
+    display: flex;
+    margin-right: 5px;
+}
+
+header nav .nav-tools form button svg {
+    width: 18px;
+    height: 18px;
+}
+
+header nav .nav-tools form button {
+    background-color: var(--brand-red);
+    margin: 0;
+    padding: 3px;
+    border-radius: 0 6px 6px 0;
+}
+
+/* top links */
+header nav .nav-top-links {
+    position: absolute;
+    top: 0;
+    right: 20px;
+    display: flex;
+    background-color: var(--brand-gold);
+    border-radius: 0 0 12px 12px;
+    color: black;
+}
+
+header nav .nav-top-links a:any-link {
+    color: black;
+}
+
+header nav .nav-top-links ul {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+    padding: 5px;
+}
+
+header nav .nav-top-links ul li {
+    font-size: 14px;
+    text-decoration: none;
+    list-style: none;
+    background: unset;
+    color: black;
+}
+
+header nav .nav-sections > ul > li > ul > li {
+    font-size: 18px;
+    padding: 8px 16px;
+}
+
+header nav .nav-sections ul li:hover > a, header nav .nav-sections a:any-link:hover, header nav .nav-sections ul li:hover {
+    background-color: var(--brand-green);
+    color: white;
+}
+
+header nav .nav-sections .nav-drop > ul > li:has(ul) {
+    cursor: initial;
+}
+
+header nav .nav-top-links a:any-link:hover {
+    color: black;
+    background-color: unset;
+}
+
+header nav .nav-top-links ul li:any-link:hover {
+    color: black;
+    background: none;
+}
+
+header nav .nav-sections > ul > li.nav-drop {
+    position: relative;
+    padding-right: 12px;
+}
+
+header nav .nav-drop::after {
+    content: ' ';
+    transform: rotate(135deg);
+    border-width: 2px 2px 0 0;
+    display: inline-block;
+    width: 6px;
+    height: 6px;
+    position: absolute;
+    top: 8px;
+    right: 14px;
+}
+
+header nav .nav-brand {
+    height: 100%;
+    display: flex;
+    align-items: flex-end;
+}
+
+header nav .nav-sections > ul > li > p {
+    margin: 0;
+}
+
+header nav .nav-sections > ul > li > ul {
+    margin-top: 20px;
+    display: none;
+    position: relative;
+}
+
+header nav .nav-sections > ul > li > ul:any-link {
+    font-size: var(--body-font-size-m);
+}
+
+/* stylelint-disable-next-line no-descending-specificity */
+header nav .nav-sections .nav-drop > ul > li > ul > li {
+    box-shadow: none;
+    font-size: 14px;
+    list-style: disclosure-closed;
+}
+
+header nav .nav-sections > ul > li[aria-expanded='true'] ul {
+    display: block;
+    position: absolute;
+    background-color: var(--background-color);
+    box-shadow: 0 6px 12px rgb(0 0 0 / 17.5%);
+    width: 300px;
+    left: 0;
+    padding: 16px;
+    border-radius: 4px;
+}
+
+header nav .nav-sections .nav-drop > ul > li > ul {
+    box-shadow: none;
+    padding-left: 40px;
+    display: block;
+    position: initial;
+    width: unset;
+}
+
+header nav .nav-sections .nav-drop > ul > li:hover > ul {
+    background-color: var(--brand-green);
+    color: white;
+}
+
+header nav .nav-sections .nav-drop > ul > li:hover > ul > li {
+    color: white;
+}
+
+header nav .nav-sections .nav-drop > ul > li:hover > ul > li a {
+    color: white;
+}
+
+header nav .nav-sections .nav-drop > ul > li:hover > ul > li a:hover {
+    text-decoration: underline;
+}
+
+header nav .nav-sections .nav-drop > ul > li > ul > li:hover {
+    background-color: unset;
+    list-style: disclosure-closed;
+}
+
+@media (max-width: 1170px) {
+    header nav {
+        grid-template:
+    'brand brand brand' 1fr
+    'sections sections sections' 2fr
+    'tools tools tools' 2fr/ 50px 1fr;
+    }
+
+    header nav .nav-tools form {
+        width: 100%;
+        justify-content: center;
+    }
+
+    header nav .nav-tools form input {
+        width: 90%;
+    }
+
+    header nav .nav-brand img {
+        height: 80px;
+        width: auto;
+    }
+}
+
+/* mobile styles */
+@media (max-width: 800px) {
+    header nav {
+        grid-template:
+    'hamburger brand brand' 1fr
+    'tools tools tools' 1fr/ 50px 1fr;
+    }
+
+    header nav .nav-top-links {
+        border-radius: 0;
+    }
+
+    header nav[aria-expanded='false'] .nav-top-links {
+        display: none;
+    }
+
+    header nav[aria-expanded='true'] .nav-top-links {
+        display: block;
+        grid-area: top-links;
+        position: initial;
+    }
+
+    header nav[aria-expanded='true'] .nav-top-links li a {
+        font-size: 14px;
+        padding: 0 12px;
+    }
+
+    header nav[aria-expanded='true'] {
+        min-height: 100vh;
+        overflow-y: scroll;
+        grid-template:
+    'hamburger brand brand' 90px
+    'tools tools tools' 90px
+    'top-links top-links top-links' 34px
+    'sections sections sections' auto / 50px 1fr;
+    }
+
+    header nav .nav-sections {
+        display: none;
+        align-self: flex-start;
+        margin-top: 40px;
+    }
+
+    header nav[aria-expanded='true'] .nav-sections ul {
+        flex-direction: column;
+    }
+
+    header nav[aria-expanded='true'] .nav-sections ul > li {
+        padding: 8px 10px;
+    }
+
+    header nav .nav-sections > ul > li[aria-expanded='true'] ul {
+        position: initial;
+        box-shadow: unset;
+        margin-bottom: 8px;
+    }
+
+    header nav .nav-hamburger {
+        grid-area: hamburger;
+        display: flex;
+        background: var(--brand-red);
+        color: white;
+        height: 100%;
+        box-sizing: border-box;
+        align-items: center;
+        justify-content: center;
+    }
+
+    header nav .nav-brand {
+        align-items: center;
+    }
+
+    header nav .nav-brand img {
+        box-sizing: border-box;
+        height: auto;
+        width: 80%;
+        max-height: 100px;
+    }
+
+    header nav[aria-expanded='true'] .nav-sections {
+        display: initial;
+    }
+
+    header nav[aria-expanded='false'] .nav-hamburger-icon,
+    header nav[aria-expanded='false'] .nav-hamburger-icon::after,
+    header nav[aria-expanded='false'] .nav-hamburger-icon::before {
+        box-sizing: border-box;
+        position: relative;
+        display: block;
+        top: 8px;
+        width: 20px;
+        height: 2px;
+        border-radius: 3px;
+        background: currentcolor;
+    }
+
+    header nav[aria-expanded='false'] .nav-hamburger-icon::after,
+    header nav[aria-expanded='false'] .nav-hamburger-icon::before {
+        content: '';
+        position: absolute;
+        top: -6px;
+    }
+
+    header nav[aria-expanded='false'] .nav-hamburger-icon::after {
+        top: 6px;
+    }
+
+    header nav[aria-expanded='true'] .nav-hamburger-icon {
+        box-sizing: border-box;
+        position: relative;
+        display: block;
+        width: 22px;
+        height: 22px;
+        border: 2px solid transparent;
+        border-radius: 5px;
+        transform: translate(-3px, -2px);
+    }
+
+    header nav[aria-expanded='true'] .nav-hamburger-icon::after,
+    header nav[aria-expanded='true'] .nav-hamburger-icon::before {
+        content: '';
+        display: block;
+        box-sizing: border-box;
+        position: absolute;
+        width: 22px;
+        height: 2px;
+        background: currentcolor;
+        transform: rotate(45deg);
+        border-radius: 5px;
+        top: 8px;
+        left: 1px
+    }
+
+    header nav[aria-expanded='true'] .nav-hamburger-icon::after {
+        transform: rotate(-45deg)
+    }
+}
+
+
+.cards > ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    grid-gap: 16px;
+}
+
+.cards > ul > li {
+    border: 1px solid var(--highlight-background-color);
+    background-color: var(--background-color)
+}
+
+.cards .cards-card-body {
+    margin: 16px;
+}
+
+.cards .cards-card-image {
+    line-height: 0;
+}
+
+.cards .cards-card-body > *:first-child {
+    margin-top: 0;
+}
+
+.cards > ul > li img {
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+}
+
+.columns > div {
+    display: flex;
+    flex-direction: column;
+}
+
+.columns img {
+    width: 100%;
+}
+
+@media (min-width: 900px) {
+    .columns > div {
+        display: flex;
+        align-items: center;
+        flex-direction: unset;
+    }
+
+    .columns > div > div {
+        flex: 1;
+        margin-left: 32px;
+    }
+
+    .columns > div > div:first-of-type {
+        margin-left: unset;
+    }
+}
+
+.link-list.block {
+    margin-top: 50px;
+    border-top: 4px solid var(--brand-red);
+}
+
+.link-list.block ul {
+    padding: 0;
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.link-list.block ul li {
+    color: white;
+    background: var(--brand-red);
+    padding: 8px;
+    font-size: 14px;
+}
+
+.link-list.block ul li * {
+    color: white;
+}
+
+/* block specific CSS goes here */
+
+main .hero-container > div {
+    max-width: unset;
+}
+
+main .hero-container {
+    padding: 0;
+}
+
+main .hero {
+    position: relative;
+    padding: 32px;
+    min-height: 300px;
+}
+
+main .hero h1 {
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+    color: white;
+}
+
+
+main .hero picture {
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    object-fit: cover;
+    box-sizing: border-box;
+}
+
+main .hero img {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+}
+
+main .slideshow-container {
+    padding: 0;
+    position: relative;
+
+    --tab-bar-height: 30px;
+}
+
+.controls-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    pointer-events: none;
+    background: radial-gradient(circle, rgb(255 255 255 / 0%) 53%, rgb(61 61 61 / 82.5%) 100%);
+}
+
+.slides-container {
+    display: flex;
+    transition: transform 200ms;
+}
+
+.slides-container img {
+    display: block;
+}
+
+.slides-container > div {
+    width: 100vw;
+    flex-shrink: 0;
+}
+
+.control-button {
+    background: none;
+    pointer-events: initial;
+}
+
+.control-button:hover {
+    background: none;
+}
+
+.control-button:focus {
+    background: none;
+}
+
+.control-button svg {
+    width: 32px;
+    height: 32px;
+}
+
+.tab-bar-container > ol svg {
+    width: 8px;
+    height: 8px;
+}
+
+.control-button:hover svg {
+    color: #7f7f7f;
+}
+
+.tab-bar-container {
+    background-color: var(--brand-red);
+    height: var(--tab-bar-height);
+    position: relative;
+}
+
+.tab-bar-container > ol {
+    display: flex;
+    list-style: none;
+    padding: 0;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: -28px;
+    left: 10px;
+}
+
+.tab-bar-container > ol button {
+    padding: 8px;
+    margin: 0;
+}
+
+.tab-bar-container::before {
+    background-color: var(--brand-green);
+    height: calc(var(--tab-bar-height) / 2);
+    width: 100%;
+    display: block;
+    content: "";
+}
+
+.slideshow-wrapper {
+    max-width: unset;
+}
+
+.social-links {
+    display: flex;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+}
+
+.social-links img {
+    display: block;
+    height: calc(var(--tab-bar-height) - 2px);
+    width: auto;
+}
+
+.social-links p {
+    margin: 0 14px 0 0;
+}
+
+.slides-container > div > div {
+    display: flex;
+    justify-content: center;
+}
+
+.slide a {
+    display:block;
+}
+
+/* desktop styles */
+@media (min-width: 900px) {
+    main .slideshow-container {
+        --tab-bar-height: 24px;
+    }
+
+    .section > div.slideshow-wrapper {
+        max-width: unset;
+    }
+
+    .social-links p {
+        margin: 0 4px 0 0;
+    }
+
+    .tab-bar-container > ol {
+        top: -10px;
+        left: 50%;
+        margin: 0 0 0 -40px;
+    }
+
+    .tab-bar-container > ol button {
+        padding: 0;
+    }
+}

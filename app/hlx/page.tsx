@@ -1,6 +1,6 @@
 'use server';
 
-import {parse} from '../../lib/data';
+import {parse} from '../../lib/parsers/hlx/boilerplate';
 import {Page as RnaPage} from '../../components/standard/Page';
 import "./global.css";
 

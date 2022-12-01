@@ -1,7 +1,7 @@
 'use server';
 
 import 'react-responsive-carousel/lib/styles/carousel.min.css';
-import './slideshow.css'
+//import './slideshow.css'
 import Image from "next/image";
 import Link from "next/link";
 import CarouselWrapper from "./CarouselWrapper";

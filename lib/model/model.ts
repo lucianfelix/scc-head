@@ -1,3 +1,8 @@
+//TODO: This model is not used yet
+// The parsers should produce this model
+// The Components should use this model
+
+
 export {}
 
 
@@ -54,7 +59,7 @@ type Column = {
 
 type Picture = {
     //source: AssetSource
-    
+
     // enum AssetSource: , Hashable {
     //     case url(url: URL)
     //     case bundledAsset(name: String)
