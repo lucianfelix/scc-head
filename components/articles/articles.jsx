@@ -32,7 +32,7 @@ export default function Articles({data, indexData}) {
                 <Link href={`upm${path}`}>
                   <Image src={`https://main--upm--hlxsites.hlx.live${image}`}
                          alt={title ? title : 'missing title'}
-                         width={200}
+                         width={250}
                          height={100}
                          sizes={sizes}
                          loading={ eagerImage ? 'eager' : 'lazy'}
