@@ -2,7 +2,7 @@
 
 import Link from 'next/link';
 import Image from 'next/image';
-import './articles.css'
+//import './articles.css'
 
 export default function Articles({data, indexData}) {
 

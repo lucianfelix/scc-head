@@ -1,6 +1,8 @@
 'use client';
 
-import { Carousel } from 'react-responsive-carousel';
+import { lazy } from 'react';
+const Carousel = lazy(() => import('react-responsive-carousel').then((module) => ({ default: module.Carousel })));
+//import { Carousel } from 'react-responsive-carousel';
 
 export default function CarouselWrapper({ children }) {
   return (
