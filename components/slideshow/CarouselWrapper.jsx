@@ -7,6 +7,7 @@ export default function CarouselWrapper({ children }) {
     <Carousel
         // autoPlay
         // showArrows
+        showIndicators={false}
         interval={15000}
         showThumbs={false}>
         {children}

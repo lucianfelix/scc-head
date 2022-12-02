@@ -29,7 +29,7 @@ export default function Articles({data, indexData}) {
               }
 
               return(<div key={`${content}_${path}`}>
-                <Link href={`upm${path}`}>
+                <Link href={`upm${path}`} title={title ? title : 'missing title'}>
                   <Image src={`https://main--upm--hlxsites.hlx.live${image}`}
                          alt={title ? title : 'missing title'}
                          width={250}
@@ -41,7 +41,7 @@ export default function Articles({data, indexData}) {
                   />
                 </Link>
                 {content != 'banner' && <h2>{title}</h2>}
-                {content != 'banner' && <div className="article-link"><Link href={`upm${path}`}>Read More</Link></div>}
+                {content != 'banner' && <div className="article-link"><Link href={`upm${path}`} title={title ? title : 'missing title'}>Read More</Link></div>}
               </div>)
             }
           })}
