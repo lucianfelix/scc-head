@@ -15,13 +15,17 @@ export default function Articles({data, indexData}) {
           {indexData.map(({path, title, tags, description, image}) => {
             const thisTags = `[\"${content}\"]`;
             //if image string contains "image" then is eager
-            const eagerImage = path.includes('up-pgh-covid-19-bayanihan-na-operations-center');
+            const eagerImage = style == 'banner-style' && (
+                path.includes('up-pgh-covid-19-bayanihan-na-operations-center') ||
+                path.includes('up-manila-covid-19-updates') ||
+                path.includes('give-to-up'));
+            // const eagerImage = style === 'banner-style' && i < 3;
             if(thisTags === tags) {
               let sizes = '100vw';
               switch (style) {
                 case 'banner-style': sizes = '(max-width: 700px) 80vw, 250px'; break;
-                case 'article-style': sizes = '100px'; break;
-                case 'article-style article-gray': sizes = '100px'; break;
+                case 'article-style': sizes = '10vw'; break;
+                case 'article-style article-gray': sizes = '10vw'; break;
               }
 
               return(<div key={`${content}_${path}`}>

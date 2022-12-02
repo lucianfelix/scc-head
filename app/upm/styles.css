@@ -223,7 +223,19 @@ hr {
   border-bottom: 1px solid var(--overlay-background-color);
 }
 
-main img {
+/*main img {*/
+/*  max-width: 100%;*/
+/*  width: auto;*/
+/*  height: auto;*/
+/*}*/
+
+main .carousel-slider img {
+  max-width: 100%;
+  width: auto;
+  height: auto;
+}
+
+main .article-style img {
   max-width: 100%;
   width: auto;
   height: auto;
