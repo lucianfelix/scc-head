@@ -18,7 +18,7 @@ export default function Slideshow({data}) {
               <Link href={link.href} title={link.text}>
                 <Image
                     src={pictureUrl} width={width} height={height} alt={link.text}
-                    loading={i === 0 ? 'eager' : 'lazy'} priority={i === 0} quality={80}/>
+                    loading={i === 0 ? 'eager' : 'lazy'} priority={i === 0} quality={70}/>
               </Link>
             </div>
           );
