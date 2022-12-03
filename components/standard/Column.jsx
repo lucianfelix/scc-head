@@ -1,4 +1,4 @@
-'use server';
+'use client';
 
 export function Column(props) {
     const { content, 'class': clazz } = props.data;

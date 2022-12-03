@@ -6,6 +6,11 @@ import "./global.css";
 
 export default async function Page() {
 
+
+
+    // Selecting a specific field using an inline getSnapshot
+    //const selectedField = useSyncExternalStore(store.subscribe, () => store.getSnapshot().selectedField);
+
     const source = await parse(
         "https://www.hlx.live/home",
         []

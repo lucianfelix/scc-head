@@ -1,4 +1,4 @@
-'use server';
+'use client';
 
 import {ColumnContainer} from './ColumnContainer';
 import {CardContainer} from './CardContainer';
