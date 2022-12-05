@@ -26,7 +26,7 @@ export default async function Page() {
                 </div>
             </header>
             <main>
-                <RnaPage data={source} indexData={{}}/>
+                <RnaPage dataOld={source} indexData={{}}/>
             </main>
             <footer className={"footer-wrapper"}></footer>
         </>

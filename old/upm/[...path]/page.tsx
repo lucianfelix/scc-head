@@ -43,7 +43,7 @@ export default async function Page({params}: {params: Params}) {
 
     return (
         <div className="page">
-            <RnaPage data={source} indexData={{}}/>
+            <RnaPage dataOld={source} indexData={{}}/>
         </div>
     );
 }

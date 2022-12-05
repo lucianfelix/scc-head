@@ -45,17 +45,18 @@ export default async function Page() {
         ]
     );
 
+    // @ts-ignore
     return (
         <>
             <header className={"header-wrapper"}>
                 <div className="header block">
-                <nav aria-expanded="false" dangerouslySetInnerHTML={{ __html: source?.nav?.content }}>
-                    {/*<div className="nav-hamburger"><div className="nav-hamburger-icon"></div></div>*/}
-                </nav>
+                {/*<nav aria-expanded="false" dangerouslySetInnerHTML={{ __html: source?.nav?.content }}>*/}
+                {/*    /!*<div className="nav-hamburger"><div className="nav-hamburger-icon"></div></div>*!/*/}
+                {/*</nav>*/}
                 </div>
             </header>
             <main>
-                <RnaPage data={source} indexData={indexData}/>
+                <RnaPage dataOld={source} indexData={indexData}/>
             </main>
             <footer className={"footer-wrapper"}></footer>
         </>
