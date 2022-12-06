@@ -60,6 +60,15 @@ export async function getData(key: string): Promise<DataType | undefined> {
     }
 }
 
+export async function saveData(key: string, value: object): Promise<any> {
+    key = translateKey(key);
+
+    const dbRef = ref(getDatabase());
+    const writePromiseResult = set(child(dbRef, key), value);
+
+    return writePromiseResult;
+}
+
 class FirebaseStoreStorage {
     data : DataType | undefined = {};
     subscribers = new Set<() => void>();
