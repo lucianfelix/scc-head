@@ -3,7 +3,7 @@
 // import {Page as RnaPage} from '../components/standard/Page';
 //
 // import {parseSlideshow, parseArticles, parseLinkList} from '../lib/upm.js';
-//import "./global.css";
+//import "./editor.css";
 
 export default async function Page() {
 
